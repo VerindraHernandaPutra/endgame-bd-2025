@@ -1,0 +1,36 @@
+import streamlit as st
+from utils import initialize_state
+from page_step1 import show_step_1
+from page_step2 import show_step_2
+from page_keytostep3 import show_key_to_step3
+from page_step3 import show_step_3
+
+# --- Page Configuration ---
+st.set_page_config(
+    page_title="Journey of the Poneglyphs",
+    layout="wide",
+)
+
+initialize_state()
+
+current_stage = st.session_state.stage
+
+if current_stage == 0:
+    st.title("🗺️ Journey of the Poneglyphs")
+    st.markdown("Welcome, treasure hunter! Your journey to find the final treasure begins now.")
+    st.subheader("Are you ready to start?")
+    if st.button("Start Adventure"):
+        st.session_state.stage = 1
+        st.rerun()
+
+elif current_stage == 1:
+    show_step_1()
+
+elif current_stage == 2:
+    show_step_2()
+
+elif current_stage == 3: 
+    show_key_to_step3()
+
+elif current_stage == 4:
+    show_step_3()
