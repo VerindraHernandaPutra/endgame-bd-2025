@@ -5,7 +5,7 @@ from page_step2 import show_step_2
 from page_keytostep3 import show_key_to_step3
 from page_step3 import show_step_3
 
-# --- Page Configuration ---
+# JUDUL HALAMAN
 st.set_page_config(
     page_title="Journey of the Poneglyphs",
     layout="wide",
@@ -15,6 +15,7 @@ initialize_state()
 
 current_stage = st.session_state.stage
 
+# URUTAN ALUR APLIKASI BERDASARKAN STAGE
 if current_stage == 0:
     st.title("🗺️ Journey of the Poneglyphs")
     st.markdown("Welcome, treasure hunter! Your journey to find the final treasure begins now.")

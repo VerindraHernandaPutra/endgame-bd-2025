@@ -1,15 +1,17 @@
 import streamlit as st
-from utils import load_excel_data, PONEGLYPH_1, reset_progress
+from utils import load_data_step1, PONEGLYPH_1, reset_progress
 import time
 
 def show_step_1():
+    # DESKRIPSI PUZZLE
     st.header("Step 1: The First Poneglyph")
     st.markdown("Your adventure begins. Decipher the text below to determine your destination.")
     st.divider()
 
     st.info(PONEGLYPH_1)
 
-    islands_df = load_excel_data()
+    # DATASET
+    islands_df = load_data_step1()
     if not islands_df.empty:
         st.subheader("Island Database Reference:")
         try:
@@ -20,6 +22,7 @@ def show_step_1():
 
     st.divider()
 
+    # TEBAK PULAU
     st.subheader("Tebak nama pulau yang digambarkan oleh Poneglyph:")
     user_guess = st.text_input("Nama Pulau").lower()
 
@@ -29,7 +32,7 @@ def show_step_1():
             st.session_state.step1_guess_correct = True
         else:
             st.error("Tebakanmu salah. Kamu tersesat di lautan dan harus memulai dari awal!")
-            time.sleep(2) # Pause briefly to show message before reset
+            time.sleep(2)
             reset_progress()
             st.rerun()
 

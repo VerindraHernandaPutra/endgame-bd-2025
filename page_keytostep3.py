@@ -1,5 +1,5 @@
 import streamlit as st
-from utils import load_excel_data, PONEGLYPH_2, reset_progress
+from utils import load_data_keytostep3, PONEGLYPH_2, reset_progress
 import time
 
 def show_key_to_step3():
@@ -14,7 +14,7 @@ def show_key_to_step3():
     st.subheader("Poneglyph Kedua Terbuka!")
     st.info(PONEGLYPH_2)
 
-    islands_df = load_excel_data()
+    islands_df = load_data_keytostep3()
     if not islands_df.empty:
         st.subheader("Island Database Reference:")
         st.dataframe(islands_df)

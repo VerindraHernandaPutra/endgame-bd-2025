@@ -3,7 +3,6 @@ import pandas as pd
 import markovify
 import codecs
 
-# --- Constants and Game Data ---
 PONEGLYPH_1 = """
 "Ukiran batu ini penuh dengan pola berulang, kadang spiral, kadang patah-patah, seolah menggambarkan perjalanan waktu yang tidak pernah berhenti. Beberapa simbol seperti menirukan suara langkah raksasa yang bergema di hutan purba, meskipun artinya tidak pernah jelas bagi pembaca awam. Di sela barisan tanda yang seakan tidak berkaitan, tersisip frasa samar yang berbunyi **bangsa tubuh menjulang seperti menara** sebelum hilang lagi di antara coretan patah. Setelah itu ukiran kembali dipenuhi lingkaran tak beraturan, seakan menutup rahasia dengan tirai kabut. Tidak ada tanda arah jelas, hanya getaran samar dari batu ini yang membuat pembaca merasa seolah sedang diawasi."
 """
@@ -12,22 +11,43 @@ PONEGLYPH_2 = """
 """
 TEXT_CORPUS = "The final journey leads to the greatest treasure. Only the one true pirate king can claim the gold. The grand line holds the last secret. The one piece is found at the end of the grand line. A secret treasure waits for the king."
 
-# --- Helper Functions ---
+# CONFIG DATASET DISINI NANTI UNTUK KETIGA STEP | TUNGGU DATASET DI COMPLETE DULU
 @st.cache_resource
-def load_excel_data():
+def load_data_step1():
+    """Memuat dataset untuk Step 1."""
     try:
-        return pd.read_excel('pulau_endgame.xlsx')
+        return pd.read_excel('pulau_endgame.xlsx') # GANTI
     except FileNotFoundError:
-        st.error("File 'pulau_endgame.xlsx' not found. Please ensure the file exists in the root directory.")
+        st.error("File 'pulau_endgame.xlsx' tidak ditemukan. Pastikan file berada di direktori yang benar.") # GANTI
+        return pd.DataFrame()
+
+@st.cache_resource
+def load_data_keytostep3():
+    """Memuat dataset untuk Key to Step 3."""
+    try:
+        return pd.read_excel('pulau_endgame.xlsx') # GANTI
+    except FileNotFoundError:
+        st.error("File 'pulau_endgame.xlsx' tidak ditemukan. Pastikan file berada di direktori yang benar.") # GANTI
+        return pd.DataFrame()
+
+@st.cache_resource
+def load_data_step3():
+    """Memuat dataset untuk Step 3."""
+    try:
+        return pd.read_excel('pulau_endgame.xlsx') # GANTI
+    except FileNotFoundError:
+        st.error("File 'pulau_endgame.xlsx' tidak ditemukan. Pastikan file berada di direktori yang benar.") # GANTI
         return pd.DataFrame()
 
 @st.cache_resource
 def load_markov_model():
     return markovify.Text(TEXT_CORPUS, state_size=2, well_formed=False)
 
+# FUNGSI LAMA | DEPRECATED
 def decode_rot13(text):
     return codecs.encode(text, 'rot_13')
 
+# LOGIKA CORRECT ANSWER
 def initialize_state():
     if 'stage' not in st.session_state:
         st.session_state.stage = 0
@@ -38,18 +58,10 @@ def initialize_state():
     for key in keys_to_initialize:
         if key not in st.session_state:
             st.session_state[key] = False
-    if 'step3_decoded_text' not in st.session_state:
-        st.session_state.step3_decoded_text = None
-    if 'step3_generated_phrase' not in st.session_state:
-        st.session_state.step3_generated_phrase = None
 
+# FUNGSI RESET PROGRESS
 def reset_progress():
-    """Clears all progress and returns to the start screen."""
-    keys_to_reset = [
-        'stage', 'step1_guess_correct', 'step2_pixel_puzzle_solved',
-        'step2_island_guess_correct', 'step3_decoded_text', 'step3_generated_phrase'
-    ]
+    """Menghapus semua progres dan kembali ke awal."""
+    keys_to_reset = list(st.session_state.keys())
     for key in keys_to_reset:
-        if key in st.session_state:
-            del st.session_state[key]
-    # Re-initialization will set stage back to 0 on the next rerun.
+        del st.session_state[key]
