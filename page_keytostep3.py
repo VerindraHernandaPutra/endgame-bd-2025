@@ -1,11 +1,10 @@
 import streamlit as st
-from utils import load_excel_data, PONEGLYPH_2
+from utils import load_excel_data, PONEGLYPH_2, reset_progress
+import time
 
 def show_key_to_step3():
-    # LOGIKA
     if not st.session_state.get("step2_pixel_puzzle_solved", False):
         st.error("You must complete the Pixel Puzzle in Step 2 first.")
-        st.warning("Navigate back to Step 2 to proceed.")
         return
 
     st.header("Step 2 continued: Unlocking the Second Poneglyph")
@@ -25,12 +24,14 @@ def show_key_to_step3():
 
     if st.button("Tebak Pulau Kedua"):
         if 'laugh tale' in user_guess_2:
-            st.success("Tepat! Frasa 'jalan tersembunyi menuju harta terbesar' merujuk pada Laugh Tale, pulau terakhir!")
+            st.success("Tepat! Frasa 'jalan tersembunyi menuju harta terbesar' merujuk pada Laugh Tale!")
             st.session_state.step2_island_guess_correct = True
         else:
-            st.error("Tebakanmu salah. Kamu mendarat di pulau palsu.")
+            st.error("Tebakanmu salah. Kamu salah berlayar dan harus mengulang perjalanan.")
+            time.sleep(2)
+            reset_progress()
+            st.rerun()
 
-    # DIRECT KE STEP 3
     if st.session_state.get("step2_island_guess_correct", False):
         if st.button("Lanjut ke Laugh Tale (Final Step)"):
             st.session_state.stage = 4
