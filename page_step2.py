@@ -16,7 +16,7 @@ def show_step_2():
     st.markdown("Analyze the image below by writing Python code in the canvas provided.")
     # GAMBAR PUZZLE
     try:
-        image_path = 'sample.jpg'
+        image_path = 'misteri.png'
         image = Image.open(image_path)
         st.image(image, caption="Poneglyph Terkunci", width=300)
     except FileNotFoundError:
@@ -87,7 +87,7 @@ def show_step_2():
                 solution_code = """import numpy as np
 from PIL import Image
 
-image_path = 'sample.jpg'
+image_path = 'misteri.png'
 image = Image.open(image_path)
 
 # 1. Konversi gambar PIL ke NumPy array
