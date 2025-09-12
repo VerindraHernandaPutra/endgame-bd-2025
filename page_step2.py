@@ -117,8 +117,8 @@ print(f"Piksel anomali bernilai: {rare_pixel}")
     st.subheader("Submit Puzzle Answer")
     st.info("""
     **Contoh Format Jawaban:**
-    - Jika output kode Anda menemukan piksel anomali dengan nilai `[123 45 200]`.
-    - Maka input yang harus dimasukkan adalah: `12345200`
+    - Jika output kode Anda menemukan piksel anomali dengan nilai `[111 22 333]`.
+    - Maka input yang harus dimasukkan adalah: `11122333`
     """)
     user_pixel_value = st.text_input("Nilai Piksel").replace(' ', '').replace('[','').replace(']','')
 
