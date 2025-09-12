@@ -13,13 +13,15 @@ st.set_page_config(
 
 initialize_state()
 
+
+
 current_stage = st.session_state.stage
 
 # URUTAN ALUR APLIKASI BERDASARKAN STAGE
 if current_stage == 0:
     st.title("🗺️ Journey of the Poneglyphs")
-    st.markdown("Welcome, treasure hunter! Your journey to find the final treasure begins now.")
-    st.subheader("Are you ready to start?")
+    st.markdown("Selamat datang, jiwa petualang. Banyak yang telah mencoba, namun hanya yang terpilih yang sampai di titik ini. Rahasia harta karun terakhir menantimu di ujung perjalanan.")
+    st.subheader("Beranikah kau memulainya?")
     if st.button("Start Adventure"):
         st.session_state.stage = 1
         st.rerun()
