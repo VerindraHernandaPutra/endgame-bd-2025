@@ -34,7 +34,7 @@ def load_data_keytostep3():
 def load_data_step3():
     """Memuat dataset untuk Step 3."""
     try:
-        return pd.read_excel('pulau_endgame.xlsx') # GANTI
+        return pd.read_excel('emoji.xlsx') # GANTI
     except FileNotFoundError:
         st.error("File 'pulau_endgame.xlsx' tidak ditemukan. Pastikan file berada di direktori yang benar.") # GANTI
         return pd.DataFrame()
