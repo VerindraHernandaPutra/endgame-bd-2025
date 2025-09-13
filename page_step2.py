@@ -9,7 +9,7 @@ import numpy as np
 def show_step_2():
     # DESKRIPSI PUZZLE
     st.header("Step 2: The Elphaba Trial - Pixel Puzzle")
-    st.markdown("Selamat datang di Pulau Elphaba. Poneglyph Kedua terkunci di sini, dan untuk membukanya, kamu harus melewati sebuah teka teki pixel puzzle.")
+    st.markdown("Selamat datang di Pulau Elphaba. Poneglyph Kedua terkunci di sini, dan untuk membukanya, kamu harus melewati sebuah teka teki pixel puzzle. Di tahap ini, sebuah [arahan](https://docs.google.com/document/d/e/2PACX-1vR24X3fUZw0t2TJvKv7VbX1c1wa-qx_LhgI2M9G00rcpP2-4MAEzSKl50Y0jAHCa5a22fzW4KcwH4AW/pub) telah dipersiapkan untuk menuntunmu menyelesaikan teka-teki mosaik ini.", unsafe_allow_html=True)
     st.divider()
 
     st.subheader("Teka-Teki Pixel Puzzle")

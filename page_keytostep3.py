@@ -8,7 +8,7 @@ def show_key_to_step3():
         return
 
     st.header("Step 2 (continued): Mengungkap Pesan Poneglyph Kedua")
-    st.markdown("Dengan kunci yang kau dapatkan, Poneglyph Kedua akhirnya terbuka! Perhatikan setiap ukiran di dalamnya baik-baik.")
+    st.markdown("Dengan kunci yang kau dapatkan, Poneglyph Kedua akhirnya terbuka! Perhatikan setiap ukiran di dalamnya baik-baik. Ukiran kuno ini sulit dipahami, namun sebuah [arahan](https://docs.google.com/document/d/e/2PACX-1vTd-TtoEGN1Z1WoUtNSFGKe8dl7LyT5tgQ2pFYGZZs0aCl6k_NJykFYXy2ZB08wY2nhJEXLnLlzcvv6/pub)  dapat menuntunmu untuk menyingkap makna yang tersembunyi.", unsafe_allow_html=True)
     st.divider()
 
     st.subheader("Poneglyph Kedua Terbuka!")

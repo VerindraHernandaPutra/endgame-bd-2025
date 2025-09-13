@@ -5,7 +5,7 @@ import time
 def show_step_1():
     # DESKRIPSI PUZZLE
     st.header("Step 1: Pulau Tak Bernama & Batu Pertama")
-    st.markdown("Perjalananmu telah dimulai. Pahami makna tulisan di bawah ini untuk mengetahui ke mana kau harus berlayar.")
+    st.markdown("Perjalananmu telah dimulai. Pahami makna tulisan di bawah ini untuk mengetahui ke mana kau harus berlayar. Gunakan [kompas](https://docs.google.com/document/d/e/2PACX-1vRP-augeh1Uh_qxzJnWjfAWayMNJeMH-tnKsKbGiiuhhpGHQXqOOg3kMC9ryy4MeBpUKaB60euDnxBF/pub) ini sebagai penuntunmu agar tidak tersesat dalam perjalanan.", unsafe_allow_html=True)
     st.divider()
 
     st.info(PONEGLYPH_1)

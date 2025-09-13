@@ -23,7 +23,7 @@ if current_stage == 0:
     st.title("🗺️ Journey of the Poneglyphs")
     st.markdown("Selamat datang, jiwa petualang. Banyak yang telah mencoba, namun hanya yang terpilih yang sampai di titik ini. Rahasia harta karun terakhir menantimu di ujung perjalanan.")
     st.subheader("Beranikah kau memulainya?") 
-    #st.markdown("Peganglah [kompas](https://docs.google.com/document/d/e/2PACX-1vTia45O2JX9iigTKPsc1XcZOZLwp2xK0jzWykgQBjZoPE_9p-xkOoFuAdvgWN7Q9XrwPVIYYgebYfi_/pub) ini untuk menuntun langkahmu.", unsafe_allow_html=True)
+    st.markdown("Di setiap langkah perjalananmu, akan ada sebuah [arahan](https://docs.google.com/document/d/e/2PACX-1vTia45O2JX9iigTKPsc1XcZOZLwp2xK0jzWykgQBjZoPE_9p-xkOoFuAdvgWN7Q9XrwPVIYYgebYfi_/pub) yang akan menuntunmu menuju harta karun legendaris.", unsafe_allow_html=True)
     if st.button("Start Adventure"):
         st.session_state.stage = 1
         st.rerun()

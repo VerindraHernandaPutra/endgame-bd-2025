@@ -4,13 +4,13 @@ import time
 
 def show_step_3():
     st.header("Final: Teka-Teki Poneglyph Terakhir")
-    st.markdown("Selamat datang di **Laugh Tale**! Untuk menemukan One Piece, Anda harus menerjemahkan pesan terakhir yang terukir di sini.")
+    st.markdown("Selamat datang di **Laugh Tale**! Untuk menemukan One Piece, Anda harus menerjemahkan pesan terakhir yang terukir di sini. Sebelum melangkah lebih jauh, bacalah [arahan](https://docs.google.com/document/d/e/2PACX-1vR-C5PEw7-63IG2qe0tuljWuPdRxv04puZBbKBhoXz_a7L8lFokXIpeazSmfQ9nowma_nycFAGgN_gY/pub) yang akan menuntunmu memecahkan teka-teki terakhir ini.")
     st.divider()
 
     # DESKRIPSI PUZZLE
     st.subheader("Deskripsi Puzzle")
     st.info("""
-    Poneglyph terakhir ini tidak berisi tulisan biasa, melainkan sebuah teka-teki "Tebak Gambar".
+    Poneglyph terakhir ini tidak berisi tulisan biasa, melainkan sebuah teka-teki mencari yang anomali.
     
     Tugas Anda adalah menemukan **frasa kunci rahasia** yang tersembunyi. Gunakan petunjuk dan contoh di bawah ini untuk memecahkan teka-teki terakhir.
     """)
