@@ -2,7 +2,7 @@ import streamlit as st
 import time
 from PIL import Image
 # Baca file PNG
-image = Image.open("assets/berhasil menebak.png")
+image = Image.open("assets/images/berhasil menebak.png")
 
 def show_final_page():
     """

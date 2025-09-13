@@ -16,7 +16,7 @@ TEXT_CORPUS = "The final journey leads to the greatest treasure. Only the one tr
 def load_data_step1():
     """Memuat dataset untuk Step 1."""
     try:
-        return pd.read_excel('pulau_endgame.xlsx') # GANTI
+        return pd.read_excel('assets/datasets/pulau_endgame.xlsx') # GANTI
     except FileNotFoundError:
         st.error("File 'pulau_endgame.xlsx' tidak ditemukan. Pastikan file berada di direktori yang benar.") # GANTI
         return pd.DataFrame()
@@ -25,7 +25,7 @@ def load_data_step1():
 def load_data_keytostep3():
     """Memuat dataset untuk Key to Step 3."""
     try:
-        return pd.read_excel('pulau_endgame.xlsx') # GANTI
+        return pd.read_excel('assets/datasets/pulau_endgame.xlsx') # GANTI
     except FileNotFoundError:
         st.error("File 'pulau_endgame.xlsx' tidak ditemukan. Pastikan file berada di direktori yang benar.") # GANTI
         return pd.DataFrame()
@@ -34,9 +34,9 @@ def load_data_keytostep3():
 def load_data_step3():
     """Memuat dataset untuk Step 3."""
     try:
-        return pd.read_excel('emoji.xlsx') # GANTI
+        return pd.read_excel('assets/datasets/emoji.xlsx') # GANTI
     except FileNotFoundError:
-        st.error("File 'pulau_endgame.xlsx' tidak ditemukan. Pastikan file berada di direktori yang benar.") # GANTI
+        st.error("File 'emoji.xlsx' tidak ditemukan. Pastikan file berada di direktori yang benar.") # GANTI
         return pd.DataFrame()
 
 @st.cache_resource

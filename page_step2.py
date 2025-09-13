@@ -18,7 +18,7 @@ def show_step_2():
     try:
         image_path = 'misteri.png'
         image = Image.open(image_path)
-        st.image(image, caption="Poneglyph Terkunci [misteri.png]", width=300)
+        st.image(image, caption="Poneglyph Terkunci [misteri.png]", width=1080)
         st.info("Elbaph tidak seperti yang kamu bayangkan. Bukan hanya besar—ia mengintimidasi. Burung-burung setinggi manusia, akar pohon sebesar kapal. Tapi kamu tidak di sini untuk kekaguman. Kamu mencari **Poneglyph Kedua**. Di kaki air terjun batu, kamu menemukannya. Namun berbeda dari yang pertama, batu ini tampak rusak… sebagian ukiran hancur. Tapi di permukaannya, terukir pola aneh—mosaik pixel? Nami berkomentar, “Ini bukan hanya batu kuno. Ini semacam… kode.”")
     except FileNotFoundError:
         st.error(f"Image file not found at path: {image_path}")
@@ -79,10 +79,10 @@ def show_step_2():
     
     # PETUNJUK TAMBAHAN
     with st.expander("Butuh petunjuk? Masukkan kode unik di sini"):
-        st.write("Dapatkan kode unik dari asisten di dunia nyata untuk membuka petunjuk.")
+        st.write("Dapatkan bantuan dari langit dengan mendapatkan kode unik dari asisten Big Data untuk membuka petunjuk.")
         hint_code = st.text_input("Masukkan Kode Unik", type="password")
         if st.button("Buka Petunjuk"):
-            CORRECT_HINT_CODE = "BANTUAN_PIXEL_2025"
+            CORRECT_HINT_CODE = "admin123"
             if hint_code == CORRECT_HINT_CODE:
                 st.success("Kode Benar! Berikut adalah kode solusi untuk referensi.")
                 solution_code = """import numpy as np
