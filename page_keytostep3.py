@@ -7,8 +7,8 @@ def show_key_to_step3():
         st.error("You must complete the Pixel Puzzle in Step 2 first.")
         return
 
-    st.header("Step 2 continued: Unlocking the Second Poneglyph")
-    st.markdown("Using the key from the puzzle, you unlock the Poneglyph. Read its contents carefully.")
+    st.header("Step 2 (continued): Mengungkap Pesan Poneglyph Kedua")
+    st.markdown("Dengan kunci yang kau dapatkan, Poneglyph Kedua akhirnya terbuka! Perhatikan setiap ukiran di dalamnya baik-baik.")
     st.divider()
 
     st.subheader("Poneglyph Kedua Terbuka!")

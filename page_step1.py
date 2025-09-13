@@ -4,8 +4,8 @@ import time
 
 def show_step_1():
     # DESKRIPSI PUZZLE
-    st.header("Step 1: The First Poneglyph")
-    st.markdown("Your adventure begins. Decipher the text below to determine your destination.")
+    st.header("Step 1: Pulau Tak Bernama & Batu Pertama")
+    st.markdown("Perjalananmu telah dimulai. Pahami makna tulisan di bawah ini untuk mengetahui ke mana kau harus berlayar.")
     st.divider()
 
     st.info(PONEGLYPH_1)
@@ -13,7 +13,7 @@ def show_step_1():
     # DATASET
     islands_df = load_data_step1()
     if not islands_df.empty:
-        st.subheader("Island Database Reference:")
+        st.subheader("Nama-Nama Pulau:")
         try:
             st.dataframe(islands_df[['Nama Pulau / Lokasi', 'Wilayah', 'Ras Penghuni', 'Iklim / Geografi', 'Ciri Kualitatif Utama']])
         except KeyError:

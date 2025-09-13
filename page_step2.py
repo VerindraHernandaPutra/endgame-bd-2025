@@ -9,16 +9,17 @@ import numpy as np
 def show_step_2():
     # DESKRIPSI PUZZLE
     st.header("Step 2: The Elphaba Trial - Pixel Puzzle")
-    st.markdown("You have arrived at Pulau Elphaba. To unlock the Poneglyph Kedua, you must first solve this technical puzzle.")
+    st.markdown("Selamat datang di Pulau Elphaba. Poneglyph Kedua terkunci di sini, dan untuk membukanya, kamu harus melewati sebuah teka teki pixel puzzle.")
     st.divider()
 
     st.subheader("Teka-Teki Pixel Puzzle")
-    st.markdown("Analyze the image below by writing Python code in the canvas provided.")
+    #st.markdown("Untuk menganalisis gambar di bawah, tuliskan kode Python Anda di area yang telah tersedia.")
     # GAMBAR PUZZLE
     try:
         image_path = 'misteri.png'
         image = Image.open(image_path)
-        st.image(image, caption="Poneglyph Terkunci", width=300)
+        st.image(image, caption="Poneglyph Terkunci [misteri.png]", width=300)
+        st.info("Elbaph tidak seperti yang kamu bayangkan. Bukan hanya besar—ia mengintimidasi. Burung-burung setinggi manusia, akar pohon sebesar kapal. Tapi kamu tidak di sini untuk kekaguman. Kamu mencari **Poneglyph Kedua**. Di kaki air terjun batu, kamu menemukannya. Namun berbeda dari yang pertama, batu ini tampak rusak… sebagian ukiran hancur. Tapi di permukaannya, terukir pola aneh—mosaik pixel? Nami berkomentar, “Ini bukan hanya batu kuno. Ini semacam… kode.”")
     except FileNotFoundError:
         st.error(f"Image file not found at path: {image_path}")
         st.warning("Cannot display puzzle image. Please ensure the image file is in the correct directory.")

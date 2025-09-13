@@ -17,11 +17,10 @@ def show_step_3():
     st.divider()
 
     # DATASET
-    st.subheader("Catatan Kuno (Data Sampel)")
+    st.subheader("Catatan Kuno")
     
     st.success("""
-    **Petunjuk Penting:** Untuk menemukan emoji di setiap `Label`, carilah emoji yang **unik/anomali**. 
-    Setiap `Label` (contoh: Nami, Sanji, dll.) hanya memiliki **satu emoji kunci** yang tersembunyi di dalam salah satu baris teksnya.
+    **Petunjuk Penting:** Untuk menemukan emoji di setiap `Label`, carilah emoji yang **unik/anomali**.  
     """)
     
     placeholder_df = load_data_step3()
@@ -39,7 +38,7 @@ def show_step_3():
     col3.markdown("<h2 style='text-align: center;'>🤥</h2>", unsafe_allow_html=True)
 
     st.warning(
-    "Setelah emoji tersusun, terjemahkan menjadi kata-kata (misal: **'jeruk rokok penipu'**). Frasa inilah yang dimasukkan sebagai jawaban."
+    "Setelah emoji tersusun, terjemahkan menjadi kata-kata (misal: **'tangerine cigarette lying face'**). Frasa inilah yang dimasukkan sebagai jawaban."
     )
     st.divider()
     
@@ -49,7 +48,7 @@ def show_step_3():
     user_answer = st.text_input("Frasa Kunci Rahasia").lower()
 
     if st.button("Buka One Piece"):
-        CORRECT_PHRASE = "es teh hangat minum nasi" # JAWABAN BENAR
+        CORRECT_PHRASE = "smiling face with hearts money-mouth face hot face confused face weary cat" # JAWABAN BENAR
         
         # LOGIKA JAWABAN BENAR/SALAH
         if user_answer.strip() == CORRECT_PHRASE:
