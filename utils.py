@@ -53,7 +53,7 @@ def initialize_state():
         st.session_state.stage = 0
     keys_to_initialize = [
         'step1_guess_correct', 'step2_pixel_puzzle_solved',
-        'step2_island_guess_correct'
+        'step2_island_guess_correct', 'step3_final_puzzle_solved'
     ]
     for key in keys_to_initialize:
         if key not in st.session_state:

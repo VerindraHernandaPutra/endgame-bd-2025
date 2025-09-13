@@ -20,7 +20,7 @@ def show_step_3():
     st.subheader("Catatan Kuno")
     
     st.success("""
-    **Petunjuk Penting:** Untuk menemukan emoji di setiap `Label`, carilah emoji yang **unik/anomali**.  
+    **Petunjuk Penting:** Untuk menemukan emoji di setiap `Label`, carilah emoji yang **unik/anomali**. Translasi emoji yang kamu temukan [disini.](https://unicode.org/emoji/charts/full-emoji-list.html) 
     """)
     
     placeholder_df = load_data_step3()
@@ -47,7 +47,7 @@ def show_step_3():
     st.markdown("**Masukkan frasa rahasia yang sudah Anda pecahkan:**")
     user_answer = st.text_input("Frasa Kunci Rahasia").lower()
 
-    if st.button("Buka One Piece"):
+    if st.button("Tebak"):
         CORRECT_PHRASE = "smiling face with hearts money-mouth face hot face confused face weary cat" # JAWABAN BENAR
         
         # LOGIKA JAWABAN BENAR/SALAH
@@ -55,8 +55,16 @@ def show_step_3():
             st.balloons()
             st.success("SELAMAT! Kunci yang Anda masukkan benar!")
             st.markdown("## 🎉 Anda Telah Menemukan One Piece! 🎉") # MASUKKAN LINK UNTUK MASUK KE NEXT ENDGAME DIVISI LAIN [BIKIN PAGE BARU AE KLO MAU, BIAR LEBIH IMMERSIVE HAHAHAH]
+            st.session_state.step3_final_puzzle_solved = True
+            st.session_state.stage = 5
+            st.rerun()
         else:
             st.error("Frasa yang Anda masukkan salah! Poneglyph mereset dirinya dan Anda terlempar kembali ke awal.")
             time.sleep(3)
             reset_progress()
             st.rerun()
+    
+    # if st.session_state.get("step3_final_puzzle_solved", False):
+    #     if st.button("Mulai Petualangan Baru 🗺️"):
+    #         st.session_state.stage = 5
+    #         st.rerun()

@@ -4,6 +4,7 @@ from page_step1 import show_step_1
 from page_step2 import show_step_2
 from page_keytostep3 import show_key_to_step3
 from page_step3 import show_step_3
+from page_finished import show_final_page
 
 # JUDUL HALAMAN
 st.set_page_config(
@@ -37,4 +38,7 @@ elif current_stage == 3:
     show_key_to_step3()
 
 elif current_stage == 4:
-    show_step_3()
+    show_step_3() 
+
+elif current_stage == 5:
+    show_final_page()  
