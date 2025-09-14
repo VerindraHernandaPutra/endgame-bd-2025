@@ -97,7 +97,7 @@ def show_step_1():
         user_guess = st.text_input("Nama Pulau").lower()
 
         if st.button("Tebak"):
-            if 'elbaph' in user_guess:
+            if 'elbaph' in user_guess.lower():
                 st.session_state.step1_guess_correct = True
                 st.session_state.step1_outro_slide = 1 # Memulai sekuens outro
                 st.rerun()
