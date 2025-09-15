@@ -32,4 +32,4 @@ def show_final_page():
     # 5. Memberi pesan tambahan dan tombol untuk bermain lagi
     st.subheader("Perjalananmu mungkin telah berakhir, tapi legendamu akan abadi.")
 
-    st.markdown("👉 Lanjutkan ke game berikutnya [di sini](https://www.google.com/)🗺️", unsafe_allow_html=True)
+    st.markdown("👉 Lanjutkan ke game berikutnya [di sini](https://bit.ly/hloiniendgmebagiancsyhahvfun)🗺️", unsafe_allow_html=True)
